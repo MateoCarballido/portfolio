@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react'
+import { WA_URL } from '../data/contact'
 
 const NAV_LINKS = [
   { label: 'Proyectos', href: '#proyectos' },
   { label: 'Cómo trabajo', href: '#metodo' },
   { label: 'Contacto', href: '#contacto' },
 ]
-
-const WA_URL = 'https://wa.me/5491166290707'
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -87,6 +86,8 @@ export function Navbar() {
         className={`md:hidden bg-bg border-t border-bg-alt overflow-hidden transition-all duration-300 ${
           menuOpen ? 'max-h-72' : 'max-h-0'
         }`}
+        aria-hidden={!menuOpen}
+        inert={!menuOpen ? true : undefined}
       >
         <nav className="max-w-6xl mx-auto px-6 py-5 flex flex-col gap-5">
           {NAV_LINKS.map((link) => (

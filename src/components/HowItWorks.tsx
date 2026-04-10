@@ -22,13 +22,14 @@ const STEPS = [
 ]
 
 export function HowItWorks() {
+  const headerRef = useScrollReveal<HTMLDivElement>()
   const stepsRef = useScrollReveal<HTMLDivElement>()
 
   return (
     <section id="metodo" className="bg-bg-alt py-24 lg:py-32">
       <div className="max-w-6xl mx-auto px-6">
 
-        <div className="mb-16 lg:mb-20">
+        <div ref={headerRef} className="mb-16 lg:mb-20">
           <p className="font-sans font-semibold text-accent text-xs tracking-[0.2em] uppercase mb-4">
             El proceso
           </p>

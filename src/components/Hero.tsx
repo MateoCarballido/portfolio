@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react'
 import anime from 'animejs'
-
-const WA_URL = 'https://wa.me/5491166290707'
+import { WA_URL } from '../data/contact'
 
 export function Hero() {
   const contentRef = useRef<HTMLDivElement>(null)

@@ -1,6 +1,5 @@
 import { useScrollReveal } from '../hooks/useScrollReveal'
-
-const WA_URL = 'https://wa.me/5491166290707'
+import { WA_URL, EMAIL } from '../data/contact'
 
 export function CTAFinal() {
   const ref = useScrollReveal<HTMLDivElement>()
@@ -36,10 +35,10 @@ export function CTAFinal() {
           <p className="font-sans text-text-muted text-sm mt-6">
             O escribime a{' '}
             <a
-              href="mailto:teocarballido@gmail.com"
+              href={`mailto:${EMAIL}`}
               className="text-text hover:text-accent transition-colors underline underline-offset-2"
             >
-              teocarballido@gmail.com
+              {EMAIL}
             </a>
           </p>
 

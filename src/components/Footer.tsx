@@ -1,3 +1,5 @@
+import { WA_URL, EMAIL, LINKEDIN, PORTFOLIO_URL } from '../data/contact'
+
 const YEAR = new Date().getFullYear()
 
 export function Footer() {
@@ -12,7 +14,7 @@ export function Footer() {
 
           <div className="flex items-center gap-6">
             <a
-              href="https://www.linkedin.com/in/mateo-carballido-639347314/"
+              href={LINKEDIN}
               target="_blank"
               rel="noopener noreferrer"
               className="text-bg/50 hover:text-bg/90 transition-colors"
@@ -20,7 +22,7 @@ export function Footer() {
               LinkedIn
             </a>
             <a
-              href="https://mateocarballido.github.io"
+              href={PORTFOLIO_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="text-bg/50 hover:text-bg/90 transition-colors"
@@ -31,7 +33,7 @@ export function Footer() {
 
           <div className="flex items-center gap-6">
             <a
-              href="https://wa.me/5491166290707"
+              href={WA_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="text-bg/50 hover:text-bg/90 transition-colors"
@@ -39,7 +41,7 @@ export function Footer() {
               WhatsApp
             </a>
             <a
-              href="mailto:teocarballido@gmail.com"
+              href={`mailto:${EMAIL}`}
               className="text-bg/50 hover:text-bg/90 transition-colors"
             >
               Email
