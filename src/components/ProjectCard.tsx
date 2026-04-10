@@ -29,6 +29,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={`Ver proyecto: ${project.name}`}
             className="absolute top-6 right-6 font-sans text-xs text-white/60 hover:text-white transition-colors tracking-widest uppercase"
           >
             Ver proyecto ↗

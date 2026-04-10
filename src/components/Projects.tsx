@@ -4,6 +4,7 @@ import { ProjectCard } from './ProjectCard'
 
 export function Projects() {
   const headerRef = useScrollReveal<HTMLDivElement>()
+  const cardsRef = useScrollReveal<HTMLDivElement>()
 
   return (
     <section id="proyectos" className="bg-bg py-24 lg:py-32">
@@ -21,7 +22,7 @@ export function Projects() {
           </p>
         </div>
 
-        <div className="flex flex-col gap-6 lg:gap-8">
+        <div ref={cardsRef} className="flex flex-col gap-6 lg:gap-8">
           {projects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}

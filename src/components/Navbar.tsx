@@ -17,6 +17,14 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && menuOpen) setMenuOpen(false)
+    }
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [menuOpen])
+
   const handleNavClick = (href: string) => {
     setMenuOpen(false)
     const el = document.querySelector(href) as HTMLElement | null
@@ -73,6 +81,7 @@ export function Navbar() {
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
           aria-expanded={menuOpen}
+          aria-controls="mobile-menu"
         >
           <span className={`block h-px w-6 bg-text transition-all duration-200 origin-center ${menuOpen ? 'translate-y-[7px] rotate-45' : ''}`} />
           <span className={`block h-px bg-text transition-all duration-200 ${menuOpen ? 'w-0 opacity-0' : 'w-5'}`} />
@@ -83,6 +92,7 @@ export function Navbar() {
 
       {/* Mobile menu */}
       <div
+        id="mobile-menu"
         className={`md:hidden bg-bg border-t border-bg-alt overflow-hidden transition-all duration-300 ${
           menuOpen ? 'max-h-72' : 'max-h-0'
         }`}
