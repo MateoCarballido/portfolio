@@ -43,6 +43,10 @@
     letter-spacing: -0.015em;
   }
 
+  h1, h2, h3 {
+    overflow-wrap: break-word;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     * {
       animation: none !important;
