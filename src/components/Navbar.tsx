@@ -22,8 +22,8 @@ export function Navbar() {
     setMenuOpen(false)
     const el = document.querySelector(href) as HTMLElement | null
     if (!el) return
-    if (window.lenis) {
-      window.lenis.scrollTo(el, { offset: -80 })
+    if (window.__lenis) {
+      window.__lenis.scrollTo(el, { offset: -80 })
     } else {
       el.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
@@ -40,7 +40,7 @@ export function Navbar() {
         {/* Logo */}
         <button
           className="font-sans font-semibold text-text text-sm tracking-tight hover:text-accent transition-colors cursor-pointer bg-transparent border-none p-0"
-          onClick={() => window.lenis?.scrollTo(0)}
+          onClick={() => window.__lenis?.scrollTo(0)}
         >
           Mateo Carballido
         </button>
