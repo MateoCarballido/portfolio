@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-vite@latest:*)",
+      "Bash(npx create-vite@9 --help)",
+      "Bash(npx create-vite@9 . --template react-ts --no-interactive)",
+      "Read(//private/tmp/**)",
+      "Bash(npx create-vite@9 vite-temp --template react-ts --no-interactive)",
+      "Read(//tmp/**)",
+      "Bash(cp:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git init:*)",
+      "Bash(node:*)"
+    ]
+  }
+}

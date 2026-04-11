@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import type { Project } from '../data/projects'
 
 interface ProjectCardProps {
@@ -5,32 +6,83 @@ interface ProjectCardProps {
   index: number
 }
 
+function sendYTCommand(iframe: HTMLIFrameElement, func: string) {
+  iframe.contentWindow?.postMessage(
+    JSON.stringify({ event: 'command', func, args: [] }),
+    '*'
+  )
+}
+
 export function ProjectCard({ project, index }: ProjectCardProps) {
   const isEven = index % 2 === 0
+  const iframeRef = useRef<HTMLIFrameElement>(null)
+
+  const handleMouseEnter = () => {
+    if (iframeRef.current) sendYTCommand(iframeRef.current, 'playVideo')
+  }
+  const handleMouseLeave = () => {
+    if (iframeRef.current) sendYTCommand(iframeRef.current, 'pauseVideo')
+  }
 
   return (
     <article className="grid grid-cols-1 lg:grid-cols-2 overflow-hidden">
 
       {/* Visual — order swaps on even/odd rows on desktop */}
       <div
-        className={`relative h-64 lg:h-auto min-h-[320px] bg-gradient-to-br ${project.gradient} flex items-end p-8 ${
+        className={`relative h-64 lg:h-auto min-h-[320px] ${
           !isEven ? 'lg:order-2' : ''
-        }`}
+        } overflow-hidden`}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
-        <span
-          className="font-display italic text-white/15 leading-none select-none pointer-events-none"
-          style={{ fontSize: 'clamp(2rem, 5vw, 4rem)' }}
-          aria-hidden="true"
-        >
-          {project.name}
-        </span>
+        {project.videoId ? (
+          <>
+            {/* Gradient fallback underneath */}
+            <div
+              className={`absolute inset-0 bg-gradient-to-br ${project.gradient}`}
+            />
+            <iframe
+              ref={iframeRef}
+              src={`https://www.youtube.com/embed/${project.videoId}?autoplay=0&controls=0&loop=1&mute=1&enablejsapi=1&playlist=${project.videoId}&rel=0&modestbranding=1&disablekb=1&iv_load_policy=3`}
+              title={`Preview de ${project.name}`}
+              allow="autoplay; encrypted-media"
+              className="absolute inset-0 w-full h-full pointer-events-none"
+              style={{ border: 'none' }}
+            />
+            {/* Overlay para bloquear interacción con el iframe */}
+            <div className="absolute inset-0" />
+          </>
+        ) : (
+          <div
+            className={`absolute inset-0 bg-gradient-to-br ${project.gradient} flex items-end p-8`}
+          >
+            <span
+              className="font-display italic text-white/15 leading-none select-none pointer-events-none"
+              style={{ fontSize: 'clamp(2rem, 5vw, 4rem)' }}
+              aria-hidden="true"
+            >
+              {project.name}
+            </span>
+          </div>
+        )}
+
+        {project.videoId && (
+          <span
+            className="absolute bottom-6 left-8 font-display italic text-white/20 leading-none select-none pointer-events-none z-10"
+            style={{ fontSize: 'clamp(2rem, 5vw, 4rem)' }}
+            aria-hidden="true"
+          >
+            {project.name}
+          </span>
+        )}
+
         {project.link && (
           <a
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Ver proyecto: ${project.name}`}
-            className="absolute top-6 right-6 font-sans text-xs text-white/60 hover:text-white transition-colors tracking-widest uppercase"
+            className="absolute top-6 right-6 font-sans text-xs text-white/60 hover:text-white transition-colors tracking-widest uppercase z-10"
           >
             Ver proyecto ↗
           </a>
