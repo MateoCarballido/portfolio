@@ -20,10 +20,6 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
   const handleMouseEnter = () => {
     if (iframeRef.current) sendYTCommand(iframeRef.current, 'playVideo')
   }
-  const handleMouseLeave = () => {
-    if (iframeRef.current) sendYTCommand(iframeRef.current, 'pauseVideo')
-  }
-
   return (
     <article className="grid grid-cols-1 lg:grid-cols-2 overflow-hidden">
 
@@ -33,7 +29,6 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           !isEven ? 'lg:order-2' : ''
         } overflow-hidden`}
         onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
       >
         {project.videoId ? (
           <>

@@ -35,4 +35,15 @@ export const projects: Project[] = [
     accentColor: 'text-accent',
     videoId: 'WXVHmFzBlgg',
   },
+  {
+    id: 'brun-inmobiliaria',
+    label: 'Inmobiliaria · Buenos Aires',
+    name: 'Brun Inmobiliaria',
+    problem: 'Sin presencia online: toda la gestión de propiedades se hacía de forma manual, sin sistema centralizado.',
+    solution: 'Plataforma web completa con base de datos de propiedades, login y registro de usuarios, y panel de administración.',
+    result: 'Operación digitalizada desde el día 1. Propiedades publicadas online y gestión de clientes centralizada.',
+    gradient: 'from-[oklch(40%_0.08_220)] to-[oklch(25%_0.05_240)]',
+    accentColor: 'text-accent',
+    videoId: 'CF7UEsIn2lw',
+  },
 ]
