@@ -33,7 +33,7 @@ export const projects: Project[] = [
     result: 'Primeras consultas orgánicas en la segunda semana.',
     gradient: 'from-[oklch(25%_0.01_260)] to-[oklch(40%_0.02_260)]',
     accentColor: 'text-accent',
-    videoId: 'WXVHmFzBlgg',
+    videoId: 'x_DZ4LK3_u4',
   },
   {
     id: 'brun-inmobiliaria',
@@ -44,6 +44,6 @@ export const projects: Project[] = [
     result: 'Operación digitalizada desde el día 1. Propiedades publicadas online y gestión de clientes centralizada.',
     gradient: 'from-[oklch(40%_0.08_220)] to-[oklch(25%_0.05_240)]',
     accentColor: 'text-accent',
-    videoId: 'CF7UEsIn2lw',
+    videoId: 'sYZ2TLFhlJs',
   },
 ]
