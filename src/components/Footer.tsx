@@ -1,4 +1,4 @@
-import { WA_URL, EMAIL, LINKEDIN, PORTFOLIO_URL } from '../data/contact'
+import { WA_URL, EMAIL, LINKEDIN} from '../data/contact'
 
 const YEAR = new Date().getFullYear()
 
@@ -20,14 +20,6 @@ export function Footer() {
               className="text-bg/50 hover:text-bg/90 transition-colors"
             >
               LinkedIn
-            </a>
-            <a
-              href={PORTFOLIO_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-bg/50 hover:text-bg/90 transition-colors"
-            >
-              Portfolio
             </a>
           </div>
 

@@ -22,7 +22,7 @@ export const projects: Project[] = [
     link: 'https://mateocarballido.github.io',
     gradient: 'from-[oklch(62%_0.13_48)] to-[oklch(45%_0.10_35)]',
     accentColor: 'text-accent',
-    videoId: 'y5dfrGatgoU',
+    videoId: 'GEh12OSNM6U',
   },
   {
     id: 'vera-studio',
