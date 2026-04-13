@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { Project } from '../data/projects'
 
 interface ProjectCardProps {
@@ -16,9 +16,35 @@ function sendYTCommand(iframe: HTMLIFrameElement, func: string) {
 export function ProjectCard({ project, index }: ProjectCardProps) {
   const isEven = index % 2 === 0
   const iframeRef = useRef<HTMLIFrameElement>(null)
+  const [shouldAutoplay, setShouldAutoplay] = useState(false)
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+
+    const mediaQuery = window.matchMedia('(hover: hover) and (pointer: fine)')
+    const updateAutoplayMode = () => setShouldAutoplay(!mediaQuery.matches)
+
+    updateAutoplayMode()
+
+    if (typeof mediaQuery.addEventListener === 'function') {
+      mediaQuery.addEventListener('change', updateAutoplayMode)
+      return () => mediaQuery.removeEventListener('change', updateAutoplayMode)
+    }
+
+    mediaQuery.addListener(updateAutoplayMode)
+    return () => mediaQuery.removeListener(updateAutoplayMode)
+  }, [])
 
   const handleMouseEnter = () => {
-    if (iframeRef.current) sendYTCommand(iframeRef.current, 'playVideo')
+    if (!shouldAutoplay && iframeRef.current) {
+      sendYTCommand(iframeRef.current, 'playVideo')
+    }
+  }
+
+  const handleIframeLoad = () => {
+    if (shouldAutoplay && iframeRef.current) {
+      sendYTCommand(iframeRef.current, 'playVideo')
+    }
   }
   return (
     <article className="grid grid-cols-1 lg:grid-cols-2 overflow-hidden">
@@ -38,9 +64,11 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             />
             <iframe
               ref={iframeRef}
-              src={`https://www.youtube.com/embed/${project.videoId}?autoplay=0&controls=0&loop=1&mute=1&enablejsapi=1&playlist=${project.videoId}&rel=0&modestbranding=1&disablekb=1&iv_load_policy=3`}
+              src={`https://www.youtube.com/embed/${project.videoId}?autoplay=${shouldAutoplay ? 1 : 0}&controls=0&loop=1&mute=1&playsinline=1&enablejsapi=1&playlist=${project.videoId}&rel=0&modestbranding=1&disablekb=1&iv_load_policy=3`}
               title={`Preview de ${project.name}`}
               allow="autoplay; encrypted-media"
+              loading="lazy"
+              onLoad={handleIframeLoad}
               className="absolute inset-0 w-full h-full pointer-events-none"
               style={{ border: 'none' }}
             />
