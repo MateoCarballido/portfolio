@@ -19,7 +19,6 @@ export const projects: Project[] = [
     problem: 'Presencia online desactualizada que no transmitía el nivel creativo del estudio.',
     solution: 'Landing page editorial con portfolio de proyectos, enfoque en identidad visual y conversión.',
     result: 'Web lista en 10 días. Punto de contacto profesional listo para nuevos clientes.',
-    link: 'https://mateocarballido.github.io',
     gradient: 'from-[oklch(62%_0.13_48)] to-[oklch(45%_0.10_35)]',
     accentColor: 'text-accent',
     videoId: 'GEh12OSNM6U',
