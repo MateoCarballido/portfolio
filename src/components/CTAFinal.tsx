@@ -10,16 +10,17 @@ export function CTAFinal() {
         <div ref={ref} className="max-w-2xl">
 
           <p className="font-sans font-semibold text-accent text-xs tracking-[0.2em] uppercase mb-6">
-            ¿Listo?
+            Último paso
           </p>
 
           <h2 className="text-section font-display italic text-text mb-6">
-            ¿Cómo se vería la web de tu negocio?
+            Tu negocio no necesita otra promesa. Necesita ver para creer.
           </h2>
 
           <p className="font-sans text-text-muted text-lg leading-relaxed mb-10">
-            Mandame un mensaje y en 48 horas tenés una demo real de tu sitio.
-            Sin compromiso. Sin formularios eternos.
+            Mandame el nombre de tu negocio por WhatsApp y en 48 horas tenés una
+            demo real de tu sitio. Sin reuniones previas. Sin compromiso. Sin
+            formularios eternos.
           </p>
 
           <a
@@ -28,12 +29,12 @@ export function CTAFinal() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-accent text-accent-fg font-sans font-semibold text-base px-8 py-4 hover:opacity-90 transition-opacity"
           >
-            Hablar por WhatsApp
+            Ver mi demo gratis
             <span aria-hidden="true">→</span>
           </a>
 
           <p className="font-sans text-text-muted text-sm mt-6">
-            O escribime a{' '}
+            Si preferís email, escribime a{' '}
             <a
               href={`mailto:${EMAIL}`}
               className="text-text hover:text-accent transition-colors underline underline-offset-2"

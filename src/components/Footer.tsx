@@ -30,7 +30,7 @@ export function Footer() {
               rel="noopener noreferrer"
               className="text-bg/50 hover:text-bg/90 transition-colors"
             >
-              WhatsApp
+              Ver mi demo
             </a>
             <a
               href={`mailto:${EMAIL}`}

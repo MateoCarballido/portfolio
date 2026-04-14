@@ -2,16 +2,19 @@ import { useScrollReveal } from '../hooks/useScrollReveal'
 
 const SECONDARY_BENEFITS = [
   {
-    title: 'Velocidad real',
-    description: 'De concepto a demo en 7 días. Sin burocracia, sin reuniones infinitas.',
+    title: 'Tu demo en 48 horas',
+    description:
+      'No esperás meses ni reuniones infinitas. En 48 horas ya podés ver si la dirección te cierra.',
   },
   {
-    title: 'Diseño con intención',
-    description: 'Cada sección tiene un por qué. Nada está ahí por "quedar lindo".',
+    title: 'Tu sitio online en 2 semanas',
+    description:
+      'De la demo al sitio publicado: ajustamos el contenido real y salís online sin meses de espera.',
   },
   {
-    title: 'Enfocado en ventas',
-    description: 'No hacemos "lindas". Hacemos que conviertan clientes.',
+    title: 'Cada sección tiene un trabajo',
+    description:
+      'Nada está para decorar. La página está pensada para que te escriban, te llamen o visiten tu local.',
   },
 ]
 
@@ -29,20 +32,19 @@ export function WhyItWorks() {
           </p>
         </div>
 
-        {/* Featured benefit — full width, large type */}
         <div ref={featuredRef} className="mb-16 pb-16 border-b border-text/10">
           <h2
             className="font-display italic text-text max-w-3xl"
             style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', lineHeight: 1.05, letterSpacing: '-0.02em' }}
           >
-            Ves antes de comprometerte.
+            Sabés exactamente lo que comprás.
           </h2>
           <p className="font-sans text-text-muted text-xl leading-relaxed mt-6 max-w-2xl">
-            Cero riesgo para vos. Llegás a la reunión con una web real, no un presupuesto. Tomás decisiones con información, no con promesas.
+            No pagás por una promesa. Tenés una demo enfrente, opinás sobre algo
+            real y decidís con criterio. 
           </p>
         </div>
 
-        {/* 3 secondary benefits */}
         <div ref={listRef} className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {SECONDARY_BENEFITS.map((benefit) => (
             <div key={benefit.title}>
@@ -56,7 +58,6 @@ export function WhyItWorks() {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   )

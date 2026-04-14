@@ -3,6 +3,7 @@ import { Hero } from './components/Hero'
 import { HowItWorks } from './components/HowItWorks'
 import { Projects } from './components/Projects'
 import { WhyItWorks } from './components/WhyItWorks'
+import { TrustSection } from './components/TrustSection'
 import { CTAFinal } from './components/CTAFinal'
 import { Footer } from './components/Footer'
 
@@ -15,6 +16,7 @@ export default function App() {
         <HowItWorks />
         <Projects />
         <WhyItWorks />
+        <TrustSection />
         <CTAFinal />
       </main>
       <Footer />

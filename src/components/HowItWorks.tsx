@@ -3,21 +3,21 @@ import { useScrollReveal } from '../hooks/useScrollReveal'
 const STEPS = [
   {
     number: '01',
-    title: 'Encuentro tu negocio',
+    title: 'Encontrás la demo esperándote',
     description:
-      'Busco empresas locales que necesitan presencia online pero todavía no dieron el paso.',
+      'Abrís WhatsApp y ya tenés el link a una demo pensada para tu rubro. Sin reuniones previas, sin brief y sin perseguir a nadie.',
   },
   {
     number: '02',
-    title: 'Hago tu web gratis',
+    title: 'Explorás con libertad',
     description:
-      'Sin pedirte nada primero. Antes de hablar con vos, ya tengo una demo lista pensada para tu rubro.',
+      'Entrás al sitio, ves cómo quedaría, opinás. Si te convence, seguimos. Si no, sin cargo y sin drama.',
   },
   {
     number: '03',
-    title: 'Mostramos, decidís',
+    title: 'Ajustamos y publicamos',
     description:
-      'Te muestro el resultado. Si te gusta lo que ves, avanzamos. Si no, sin cargo, sin drama.',
+      'Sumamos tu información real, afinamos lo que quieras y tu sitio queda online en menos de dos semanas.',
   },
 ]
 
@@ -31,10 +31,10 @@ export function HowItWorks() {
 
         <div ref={headerRef} className="mb-16 lg:mb-20">
           <p className="font-sans font-semibold text-accent text-xs tracking-[0.2em] uppercase mb-4">
-            El proceso
+            Así funciona
           </p>
           <h2 className="text-section font-display italic text-text max-w-xl">
-            Simple. Sin vueltas.
+            Primero lo ves. Después decidís.
           </h2>
         </div>
 
@@ -60,10 +60,9 @@ export function HowItWorks() {
 
         <div className="mt-16 pt-10 border-t border-text/10">
           <p className="font-display italic text-text text-xl md:text-2xl">
-            Sin contratos raros. Sin riesgos. Solo resultados.
+            Sin brief. Sin reuniones eternas. Sin pagar por adelantado.
           </p>
         </div>
-
       </div>
     </section>
   )

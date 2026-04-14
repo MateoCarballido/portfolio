@@ -25,7 +25,7 @@ export const projects: Project[] = [
   },
   {
     id: 'vera-studio',
-    label: 'Centro de bellez y estética',
+    label: 'Centro de belleza y estética',
     name: 'Vera Studio',
     problem: 'Único canal de contacto era Instagram, limitando la captación de nuevos clientes y profesionalismo.',
     solution: 'Sitio web moderno y responsive con catálogo de servicios, formulario de contacto y Google Maps.',

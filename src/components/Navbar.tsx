@@ -3,7 +3,7 @@ import { WA_URL } from '../data/contact'
 
 const NAV_LINKS = [
   { label: 'Proyectos', href: '#proyectos' },
-  { label: 'Cómo trabajo', href: '#metodo' },
+  { label: 'Cómo funciona', href: '#metodo' },
   { label: 'Contacto', href: '#contacto' },
 ]
 
@@ -72,7 +72,7 @@ export function Navbar() {
           rel="noopener noreferrer"
           className="hidden md:inline-flex items-center gap-2 bg-accent text-accent-fg font-sans font-semibold text-sm px-5 py-2.5 hover:opacity-90 transition-opacity"
         >
-          Contactar
+          Ver mi demo gratis
         </a>
 
         {/* Hamburger */}
@@ -115,7 +115,7 @@ export function Navbar() {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center bg-accent text-accent-fg font-sans font-semibold text-sm px-5 py-3 mt-2 hover:opacity-90 transition-opacity"
           >
-            Contactar por WhatsApp
+            Ver mi demo gratis
           </a>
         </nav>
       </div>
